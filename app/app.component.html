@@ -1,0 +1,54 @@
+<!--
+<div class="row">
+    <div class="small-12 medium-10 medium-centered columns">
+        <div class="menu-centered">
+            <a routerLink="/" class="button hollow">AngularFire2 <small>beta</small></a>
+            <span *ngIf="af.auth | async">
+              <a routerLink="/dashboard" class="button">Dashboard</a>
+              <a (click)="logout()" class="button small" title="Logout">Logout</a>
+            </span>
+            <span *ngIf="!(af.auth | async)">
+              <a class="button small" routerLink="/login">Login</a> 
+              <a class="button small" routerLink="/signup">Sign up</a>
+            </span>
+        </div>
+    </div>
+</div>
+-->
+
+<!--
+<div class="menu-centered">
+    <ul class="menu">
+        <li *ngIf="af.auth | async">LOGGED IN</li>
+        <li *ngIf="!(af.auth | async)">NOT LOGGED IN</li>
+        <li><a href="https://blog.khophi.co/angularfire2-authentication/" target="new">Read: AngularFire2 Authentication Article</a></li>
+    </ul>
+</div>
+-->
+
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Maya Care</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right" *ngIf="af.auth | async">
+            <li><a routerLink="/dashboard" class="button">Dashboard</a></li>
+            <li><a (click)="logout()" class="button small" title="Logout">Logout</a></li>
+          </ul>
+<!--
+          <form class="navbar-form navbar-right">
+            <input type="text" class="form-control" placeholder="Search...">
+          </form>
+-->
+        </div>
+      </div>
+    </nav>
+    
+   <router-outlet></router-outlet>
